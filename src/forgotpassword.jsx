@@ -1,6 +1,7 @@
 import React, { useState,useEffect } from 'react';
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
+import { API_URL } from './api';
 
 const ForgotPassword = () => {
     const [email, setEmail] = useState('');
@@ -29,7 +30,7 @@ const ForgotPassword = () => {
     const handleGetOtp = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('https://auth-microservice-l975.onrender.com/api/auth/getOtp', { email });
+            const response = await axios.post(`${API_URL}/api/auth/getOtp`, { email });
             setMessage(response.data.message);
             toast.success(response.data.message, {
                 position: "top-right",
@@ -54,7 +55,7 @@ const ForgotPassword = () => {
     const handleSubmit = async (e) => {
       e.preventDefault();
       try {
-        const response = await axios.post('https://auth-microservice-l975.onrender.com/api/auth/changePassword', { email, newPassword });
+        const response = await axios.post(`${API_URL}/api/auth/changePassword`, { email, newPassword });
         setMessage(response.data.message);
         toast.success(response.data.message, {
           position: "top-right",
@@ -79,7 +80,7 @@ const ForgotPassword = () => {
         e.preventDefault();
         try {
             // setOtp(e.target.value)
-            const response = await axios.post('https://auth-microservice-l975.onrender.com/api/auth/verifyOtp', { email, otp });
+            const response = await axios.post(`${API_URL}/api/auth/verifyOtp`, { email, otp });
             setMessage(response.data.message);
             toast.success(response.data.message, {
                 position: "top-right",
