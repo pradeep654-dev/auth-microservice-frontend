@@ -48,7 +48,7 @@ userSchema.methods.comparePassword =  async function (enterdPassword){
 
 userSchema.methods.generateToken =  function (){
     return jwt.sign(
-        {id:this.id,email:this.email,role:this.role},process.env.JWT_SECRET,{expiresIn:'7d'});
+        {id:this.id,email:this.email,role:this.role,username:this.name},process.env.JWT_SECRET,{expiresIn:'7d'});
 }
 
 module.exports = mongoose.model('groceryStoreUsers',userSchema)
