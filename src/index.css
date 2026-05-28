@@ -1,0 +1,24 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.Toastify__toast--success {
+    background-color: #4caf50 !important; /* Green */
+  }
+  
+  .Toastify__toast--error {
+    background-color: #f44336 !important; /* Red */
+  }
+  
+  .Toastify__toast--info {
+    background-color: #2196f3 !important; /* Blue */
+  }
+/* Change success icon color to white */
+.Toastify__toast--success,.Toastify__toast--error .Toastify__toast-icon svg {
+    fill: white !important;
+  }
+    
+  .Toastify__toast--success .Toastify__toast-icon svg {
+    fill: white !important;
+  }

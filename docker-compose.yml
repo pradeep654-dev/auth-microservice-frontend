@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+
+    frontend:
+    image: your-dockerhub-username/mern-frontend:latest
+    restart: always
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
