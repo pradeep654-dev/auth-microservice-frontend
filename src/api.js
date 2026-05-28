@@ -2,7 +2,7 @@ import axios from 'axios';
 import {toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-const API_URL =  'https://auth-microservice-f7ux.onrender.com'  // 'http://localhost:8000'; // Replace with your API URL
+const API_URL =  'https://auth-microservice-f7ux.onrender.com' // 'http://localhost:8000'; // Replace with your API URL
 
 export const loginUser = async (email, password) => {
     try {
